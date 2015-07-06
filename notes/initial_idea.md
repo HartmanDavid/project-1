@@ -18,8 +18,6 @@ Each dog would have Pros & Cons: how fast it eats, how fast it runs, how fast it
 Board levels: 
 
 starting levels would be easy - less distractions, medium food amounts.
-
-Medium levels: roads between sides/bowls. distractions are happen more ofthen 
  
 
 
