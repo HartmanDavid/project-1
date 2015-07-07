@@ -1,5 +1,6 @@
 console.log('hi');
 // var dFirst = document.querySelector("#first-dog").
+var obsticalArray = ['food','flower', 'cactus', 'smFence']
 
 $('body').on("keydown", function(e){
         if (e.which == 76){console.log('L');
@@ -16,3 +17,5 @@ $('body').on("keydown", function(e){
           else if (e.which == 88) { console.log('X');
               $("#second-dog").animate({marginLeft: "4.5em"},400,"linear").animate({marginLeft: "3em"},200,"linear");}
     });
+
+while ()

@@ -22,14 +22,35 @@ body{
   height: 1em;
   width: 1em;
   background-color: lightgray;
-  border: 1px solid gray;
+  border: 2px solid darkgray;
   border-radius: 3px;
   position: relative;
 }
 
+.convayer_belt{
+  width: 95%;
+  height: 25em;
+}
 #first-dog{
   top: 30%;
 }
 #second-dog{
   top: 60%;
+}
+
+#first-obstical{
+  top: 30%;
+}
+#second-obstical{
+  top: 60%;
+}
+
+.obstical {
+  margin-left: 98%;
+  height: 1em;
+  width: 1em;
+  background-color: lightgreen;
+  border: 1px solid lightblue;
+  border-radius: 3px;
+  position: relative;
 }
