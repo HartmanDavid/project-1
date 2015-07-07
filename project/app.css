@@ -17,13 +17,20 @@ body{
   background-color: tan;
 }
 
-.dog{
-  position: relative;
-  top: 30%;
-  margin: 0 0 7em 2em;
+.dog {
+  margin-left: 3em;
   height: 1em;
   width: 1em;
   background-color: lightgray;
   border: 1px solid gray;
   border-radius: 3px;
+  position: relative;
+}
+
+#first-dog{
+  position: relative;
+  top: 30%;
+}
+#second-dog{
+  top: 60%;
 }
