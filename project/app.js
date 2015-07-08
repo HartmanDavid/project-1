@@ -1,5 +1,8 @@
+//opening of the document on ready jQ function
+// $(document).ready(function){
+advanceObect1();
+advanceObect2();
 console.log('hi');
-// var dFirst = document.querySelector("#first-dog").
 var obsticalArray = ['food','flower', 'cactus', 'smFence']
 
 $('body').on("keydown", function(e){
@@ -18,4 +21,29 @@ $('body').on("keydown", function(e){
               $("#second-dog").animate({marginLeft: "4.5em"},400,"linear").animate({marginLeft: "3em"},200,"linear");}
     });
 
-while ()
+      console.log('while log' +i);
+
+
+var newObstical = 0;
+
+
+myObstical(){
+      $('.convayer_belt').append('<div class="obstical" id="first-obstical'+ newObstical+'"></div>');
+      var newIdObstical = $("#first-obstical" + newObstical);
+}
+
+      // var smurfCount = 0
+      // myFunction() {
+        //  $('#test').append('<div id="smurf'+ smurfCount + '" class="smurfs"></div>');
+      //   var mySmurf = $('#smurf' + smurfCount);
+      //   $(mySmur).animate();
+      //
+      //
+      //   smurfCount += 1;
+      // }
+function advanceObect1() {$("#first-obstical").delay(1200).animate({marginLeft: '0px'}, 3500, 'linear').animate({opacity:   '0'},200).animate({marginLeft: "100%"},0).animate({opacity: '1'},50, myObstical);
+    }
+function advanceObect2() {$("#second-obstical").delay(1200).animate({marginLeft: '0px'}, 3500, 'linear').animate({opacity: '0'},200).animate({marginLeft: "100%"}, 0).animate({opacity: '1'},50, myObstical);
+    }
+
+// } // closing of 'ready on load' function
