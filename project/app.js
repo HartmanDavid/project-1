@@ -12,7 +12,8 @@ var dogTwoTop = dogTwo.top; //the corrdinates for the outer area of the dog obje
 var dogTwoRight = dogTwoLeft + $('#second-dog').width();  //the corrdinates for the outer area of the dog object
 var dogTwoBottom = dogTwoTop + $('#second-dog').height();  //the corrdinates for the outer area of the dog object
 
-myObstical();
+myObsticalOne();
+myObsticalTwo();
 $('body').on("keydown", function(e){
         if (e.which == 76){ // 76 is the 'L' key - this makes dog one jump up
               $("#first-dog").animate({top: "15%"}, { duration: 200, easing: "linear", step: locateDogOne}).animate({top: "30%"},{ duration: 400, easing: "linear", step:locateDogOne});}
@@ -30,27 +31,51 @@ $('body').on("keydown", function(e){
 
 var newObstical = 0;
 
-function myObstical(){
+function myObsticalOne(){ //generate the first-top obstical for first-top dog
         $('.convayer_belt').append('<div class="obstical" id="first-obstical'+ newObstical+'"></div>');
-        newObsticalId = $("#first-obstical" + newObstical);
+        newObsticalOneId = $("#first-obstical" + newObstical);
 
-        $(newObsticalId).delay(1200).animate({marginLeft: '0px'}, {duration: 5500, easing: 'linear', step:locateObst, complete: removeObst});
+        $(newObsticalOneId).delay(1200).animate({marginLeft: '0px'}, {duration: 5500, easing: 'linear', step:locateObst, complete: removeObst});
         console.log(newObstical);
         newObstical +=1;
         function removeObst(){
-            $(newObsticalId).remove();
-            myObstical();
+            $(newObsticalOneId).remove();
+            myObsticalOne();
         }
         function locateObst(){
                    dogOneHits = 0; //counter for times dog one-top hits the obstical
-                   dogTwoHits = 0; //counter for times dog two-bottom hits the obstical
-                   var obstLeft = $(newObsticalId).offset().left;
-                   var obstTop = $(newObsticalId).offset().top;
-                   var obstBottom = obstTop + $(newObsticalId).height();
-                   var obstRight = obstLeft + $(newObsticalId).width();
+                   var obstLeft = $(newObsticalOneId).offset().left;
+                   var obstTop = $(newObsticalOneId).offset().top;
+                   var obstBottom = obstTop + $(newObsticalOneId).height();
+                   var obstRight = obstLeft + $(newObsticalOneId).width();
                    if ( (obstLeft <= dogOneRight) && (obstLeft >= dogOneLeft) && (dogOneBottom<= obstBottom) && (dogOneBottom >= obstTop) ) {
-                     console.log('collison');
+                    //  console.log('collison');
   // alert("we have a collision");
+                   }
+        }
+}
+
+function myObsticalTwo(){ //generate the second-bottom obstical for second-bottom dog
+        $('.convayer_belt').append('<div class="obstical" id="second-obstical'+ newObstical+'"></div>');
+        newObsticalTwoId = $("#second-obstical" + newObstical);
+
+        $(newObsticalTwoId).delay(1200).animate({marginLeft: '0px'}, {duration: 5500, easing: 'linear', step:locateObst, complete: removeObst});
+        console.log(newObstical);
+        newObstical +=1;
+        function removeObst(){
+            $(newObsticalTwoId).remove();
+            myObsticalTwo();
+        }
+        function locateObst(){
+                   dogTwoHits = 0; //counter for times dog two-bottom hits the obstical
+  //console.log('2nd dog collision detction started');
+                   var obstLeft = $(newObsticalTwoId).offset().left;
+                   var obstTop = $(newObsticalTwoId).offset().top;
+                   var obstBottom = obstTop + $(newObsticalTwoId).height();
+                   var obstRight = obstLeft + $(newObsticalTwoId).width();
+                   if ( (obstLeft <= dogOneRight) && (obstLeft >= dogOneLeft) && (dogOneBottom<= obstBottom) && (dogOneBottom >= obstTop) ) {
+  // console.log('2collison');
+  //  alert("we have a collision");
                    }
         }
 }

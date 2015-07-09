@@ -46,7 +46,7 @@ body{
 }
 
 .obstical {
-  top: 20%;
+  /*top: 20%;*/
   margin-left: 98%;
   height: 1em;
   width: 1em;
@@ -54,4 +54,14 @@ body{
   border: 1px solid lightblue;
   border-radius: 3px;
   position: relative;
+}
+
+div[id^='first-obstical']{
+  top: 20%;
+  background-color: pink;
+}
+
+div[id^='second-obstical']{
+  top: 50%;
+  background-color: yellow;
 }
