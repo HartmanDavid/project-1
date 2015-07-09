@@ -12,7 +12,7 @@ var dogOneBottom = dogOneTop + $('#first-dog').height();  //the corrdinates for 
 myObstical();
 $('body').on("keydown", function(e){
         if (e.which == 76){ // 76 is the 'L' key - this makes dog one jump up
-              $("#first-dog").animate({top: "15%"},200,"linear").animate({top: "30%"},400,"linear");}
+              $("#first-dog").animate({top: "15%"}, { duration: 200, easing: "linear", step: locateDog}).animate({top: "30%"},{ duration: 400, easing: "linear", step:locateDog});}
           else if (e.which == 188) { //188 is the ',' key - this makes  dog one move back
               document.querySelector("#first-dog");
               $("#first-dog").animate({marginLeft: ".5em"},400,"linear").animate({marginLeft: "3em"},200,"linear");}
@@ -49,12 +49,17 @@ function myObstical(){
                    var obstBottom = obstTop + $(newObsticalId).height();
                    var obstRight = obstLeft + $(newObsticalId).width();
                    if ( (obstLeft <= dogOneRight) && (obstLeft >= dogOneLeft) && (dogOneBottom<= obstBottom) && (dogOneBottom >= obstTop) ) {
-
-                     alert("we have a collision");
+                     console.log('collison');
+  // alert("we have a collision");
                    }
-
- // console.log(obstBottom);
         }
+}
 
+function locateDog() {
+      dogOne= $('#first-dog').offset(); //.offset of the first-top dog
+      dogOneLeft = dogOne.left; //the corrdinates for the outer area of the dog object
+      dogOneTop = dogOne.top; //the corrdinates for the outer area of the dog object
+      dogOneRight = dogOneLeft + $('#first-dog').width();  //the corrdinates for the outer area of the dog object
+      dogOneBottom = dogOneTop + $('#first-dog').height();  //the corrdinates for the outer area of the dog object
 
 }
