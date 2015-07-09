@@ -1,49 +1,58 @@
 //opening of the document on ready jQ function
 // $(document).ready(function){
-advanceObect1();
-advanceObect2();
+// advanceObect1();
+// advanceObect2();
 console.log('hi');
-var obsticalArray = ['food','flower', 'cactus', 'smFence']
+var obsticalArray = ['food','flower', 'cactus', 'smFence'];
+var dogOne= $('#first-dog').offset();
+var dogOneLeft = dogOne.left;
+var dogOneTop = dogOne.top;
+var dogOneRight = dogOneLeft + $('#first-dog').width();
+var dogOneBottom = dogOneTop + $('#first-dog').height();
 
+myObstical();
 $('body').on("keydown", function(e){
-        if (e.which == 76){console.log('L');
+        if (e.which == 76){
               $("#first-dog").animate({top: "15%"},200,"linear").animate({top: "30%"},400,"linear");}
-          else if (e.which == 188) { console.log(',');
+          else if (e.which == 188) {
               document.querySelector("#first-dog");
               $("#first-dog").animate({marginLeft: ".5em"},400,"linear").animate({marginLeft: "3em"},200,"linear");}
-          else if (e.which == 190) { console.log('.');
+          else if (e.which == 190) {
               $("#first-dog").animate({marginLeft: "4.5em"},400,"linear").animate({marginLeft: "3em"},200,"linear");}
-          else if (e.which == 83) { console.log('S');
+          else if (e.which == 83) {
               $("#second-dog").animate({top: "45%"},200,"linear").animate({top: "60%"},400,"linear");}
-          else if (e.which == 90) { console.log('Z');
+          else if (e.which == 90) {
               $("#second-dog").animate({marginLeft: ".5em"},400,"linear").animate({marginLeft: "3em"},200,"linear");}
-          else if (e.which == 88) { console.log('X');
+          else if (e.which == 88) {
               $("#second-dog").animate({marginLeft: "4.5em"},400,"linear").animate({marginLeft: "3em"},200,"linear");}
     });
-
-      console.log('while log' +i);
 
 
 var newObstical = 0;
 
 
-myObstical(){
-      $('.convayer_belt').append('<div class="obstical" id="first-obstical'+ newObstical+'"></div>');
-      var newIdObstical = $("#first-obstical" + newObstical);
+function myObstical(){
+        $('.convayer_belt').append('<div class="obstical" id="first-obstical'+ newObstical+'"></div>');
+        newObsticalId = $("#first-obstical" + newObstical);
+
+        $(newObsticalId).delay(1200).animate({marginLeft: '0px'}, {duration: 5500, easing: 'linear', step:locateObst, complete: removeObst});
+        console.log(newObstical);
+        newObstical +=1;
+        function removeObst(){
+            $(newObsticalId).remove();
+            myObstical();
+        }
+        function locateObst(){
+                   var obstLeft = $(newObsticalId).offset().left;
+                   var obstTop = $(newObsticalId).offset().top;
+                   var obstBottom = obstTop + $(newObsticalId).height();
+                   var obstRight = obstLeft + $(newObsticalId).width();
+                   if ( (obstLeft <= dogOneRight) && (obstLeft >= dogOneLeft)){
+                     alert("we have a collision");
+                   }
+
+ // console.log(obstBottom);
+        }
+
+
 }
-
-      // var smurfCount = 0
-      // myFunction() {
-        //  $('#test').append('<div id="smurf'+ smurfCount + '" class="smurfs"></div>');
-      //   var mySmurf = $('#smurf' + smurfCount);
-      //   $(mySmur).animate();
-      //
-      //
-      //   smurfCount += 1;
-      // }
-function advanceObect1() {$("#first-obstical").delay(1200).animate({marginLeft: '0px'}, 3500, 'linear').animate({opacity:   '0'},200).animate({marginLeft: "100%"},0).animate({opacity: '1'},50, myObstical);
-    }
-function advanceObect2() {$("#second-obstical").delay(1200).animate({marginLeft: '0px'}, 3500, 'linear').animate({opacity: '0'},200).animate({marginLeft: "100%"}, 0).animate({opacity: '1'},50, myObstical);
-    }
-
-// } // closing of 'ready on load' function
