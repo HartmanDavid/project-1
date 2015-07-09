@@ -12,7 +12,7 @@ var dogOneBottom = dogOneTop + $('#first-dog').height();
 
 myObstical();
 $('body').on("keydown", function(e){
-        if (e.which == 76){
+        if (e.which == 76){ // 76 is the 'L' key - this makes the dog jump up
               $("#first-dog").animate({top: "15%"},200,"linear").animate({top: "30%"},400,"linear");}
           else if (e.which == 188) {
               document.querySelector("#first-dog");
@@ -43,11 +43,14 @@ function myObstical(){
             myObstical();
         }
         function locateObst(){
+                   dogOneHits = 0;
+                   dogTwoHits = 0;
                    var obstLeft = $(newObsticalId).offset().left;
                    var obstTop = $(newObsticalId).offset().top;
                    var obstBottom = obstTop + $(newObsticalId).height();
                    var obstRight = obstLeft + $(newObsticalId).width();
-                   if ( (obstLeft <= dogOneRight) && (obstLeft >= dogOneLeft)){
+                   if ( (obstLeft <= dogOneRight) && (obstLeft >= dogOneLeft) && (dogOneBottom<= obstBottom) && (dogOneBottom >= obstTop) ) {
+
                      alert("we have a collision");
                    }
 
