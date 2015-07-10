@@ -1,12 +1,13 @@
 body{
   background-color: lightyellow;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .container{
   /*position: absolute;*/
   height: 100%;
   width: 100%;
-
+  text-align: center;
 }
 
 .main{
@@ -15,6 +16,7 @@ body{
   width: 95%;
   height: 25em;
   background-color: tan;
+  border-radius: 5px;
 }
 
 .dog {
@@ -46,7 +48,7 @@ body{
 }
 
 .obstical {
-  /*top: 20%;*/
+
   margin-left: 98%;
   height: 1em;
   width: 1em;
@@ -65,3 +67,23 @@ div[id^='second-obstical']{
   top: 50%;
   background-color: yellow;
 }
+.score-board{
+    /*position: relative;*/
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 95%;
+    margin: 2em auto;
+    display: inline-block;
+    font-size: 25px;
+}
+
+/*#player-one{
+    float: left;
+    left: 5%;
+}
+#player-two{
+    left: 45%;
+}
+#level{
+    float: right;
+}*/

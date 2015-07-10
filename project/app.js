@@ -22,6 +22,7 @@ var dogTwoAvoid = 0;
 
 myObsticalOne();
 myObsticalTwo();
+scoreBoard();
 $('body').on("keydown", function(e){
     if (e.which == 76){ // 76 is the 'L' key - this makes dog one jump up
         $("#first-dog").animate({top: "15%"}, { duration: 200, easing: "linear", step: locateDogOne}).animate({top: "30%"},{ duration: 400, easing: "linear", step:locateDogOne});}
@@ -112,6 +113,7 @@ function keepingScoreOne(){
         console.log( 'one'+ playerDogOne[0]);
         dogOneHits = 0;
     }
+    scoreBoard();
 }
 
 function keepingScoreTwo(){
@@ -124,4 +126,9 @@ function keepingScoreTwo(){
         console.log( 'two'+playerDogTwo[0]);
         dogTwoHits = 0;
     }
+    scoreBoard();
+}
+function scoreBoard(){
+    $('#player-one span').text(playerDogOne[0]);
+    $('#player-two span').text(playerDogTwo[0]);
 }
