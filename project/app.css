@@ -1,6 +1,8 @@
 body{
-  background-color: lightyellow;
+  /*background-color: lightyellow;*/
+  background: url(http://www.vippetfooddelivery.com/templates/__custom/images/pet/bkg.jpg);
   font-family: 'Permanent Marker', cursive;
+  color: rgb(92, 89, 89);
 }
 header{
     font-size: 50px;
@@ -17,15 +19,19 @@ header{
 .main{
   position: relative;
   margin: 2em auto;
-  width: 95%;
+  width: 94%;
   height: 25em;
-  background-color: tan;
+  background-color: rgba(167, 148, 123, .8); /* for IE browsers*/
+  background: linear-gradient(bottom, rgba(167, 148, 123, 1), rgba(167, 148, 123, .6));
+  background: -webkit-linear-gradient(bottom, rgba(167, 148, 123, 1), rgba(167, 148, 123, .4));
+  background: -moz-linear-gradient(bottom, rgba(167, 148, 123, 1), rgba(167, 148, 123, .6));
   border-radius: 5px;
+  border: 5px solid rgb(92, 89, 89);
 }
 
 .score-board{
     /*position: relative;*/
-    border: 5px solid black;
+    border: 5px solid rgb(92, 89, 89);
     border-radius: 5px;
     width: 94%;
     margin: 5px auto;
@@ -37,6 +43,14 @@ header{
     display: inline-block;
     padding: 0 2em;
 }
+
+/*#show-instructions{
+    opacity: 1;
+    font-size: 20px;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}*/
 
 .dog {
   margin-left: 3em;

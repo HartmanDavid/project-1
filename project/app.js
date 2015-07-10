@@ -33,13 +33,13 @@ scoreBoard();
 // });
 $('body').on("keydown", function(e){
     if (e.which == 76){ // 76 is the 'L' key - this makes dog one jump up
-        $("#first-dog").animate({top: "15%"}, { duration: 200, easing: "linear", step: locateDogOne}).animate({top: "30%"},{ duration: 400, easing: "linear", step:locateDogOne});}
+        $("#first-dog").animate({top: "15%"}, { duration: 300, easing: "linear", step: locateDogOne}).animate({top: "30%"},{ duration: 400, easing: "linear", step:locateDogOne});}
     else if (e.which == 188) { //188 is the ',' key - this makes  dog one move back
         $("#first-dog").animate({marginLeft: ".5em"},{ duration: 250,easing: "linear", step: locateDogOne}).animate({marginLeft: "3em"},{ duration: 250,easing: "linear", step: locateDogOne});}
     else if (e.which == 190) {//190 is the '.' key - this makes  dog one move forward
         $("#first-dog").animate({marginLeft: "4.5em"},{ duration: 250,easing: "linear", step: locateDogOne}).animate({marginLeft: "3em"},{ duration: 250,easing: "linear", step: locateDogOne});}
     else if (e.which == 83) { //83 is the 'S' key - this makes  dog two jump
-        $("#second-dog").animate({top: "45%"},{ duration: 200,easing: "linear", step: locateDogTwo}).animate({top: "60%"},{ duration: 400, easing: "linear", step: locateDogTwo});}
+        $("#second-dog").animate({top: "45%"},{ duration: 300,easing: "linear", step: locateDogTwo}).animate({top: "60%"},{ duration: 400, easing: "linear", step: locateDogTwo});}
     else if (e.which == 90) { //90 is the 'Z' key - this makes dog two move back
         $("#second-dog").animate({marginLeft: ".5em"},{ duration: 250,easing: "linear", step: locateDogTwo}).animate({marginLeft: "3em"},{ duration: 250,easing: "linear", step: locateDogTwo});}
     else if (e.which == 88) { //88 is the 'X' key - this makes dog two move forward
