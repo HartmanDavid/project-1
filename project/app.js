@@ -49,7 +49,7 @@ $('body').on("keydown", function(e){
 function myObsticalOne(){ //generate the first-top obstical for first-top dog
     $('.convayer_belt').append('<div class="obstical" id="first-obstical'+ idOneNew+'"></div>');
     newObsticalOneId = $("#first-obstical" + idOneNew);
-    $(newObsticalOneId).delay(1200).animate({marginLeft: '0px'}, {duration: 4500, easing: 'linear', step:locateObstOne, complete: function (){removeObst(); keepingScoreOne();}});
+    $(newObsticalOneId).delay(1000).animate({marginLeft: '0px'}, {duration: 4500, easing: 'linear', step:locateObstOne, complete: function (){removeObst(); keepingScoreOne();}});
     //console.log(idOneNew);
     idOneNew +=1;
     function removeObst(){
@@ -74,7 +74,7 @@ function myObsticalOne(){ //generate the first-top obstical for first-top dog
 function myObsticalTwo(){ //generate the second-bottom obstical for second-bottom dog
     $('.convayer_belt').append('<div class="obstical" id="second-obstical'+ idTwoNew+'"></div>');
     newObsticalTwoId = $("#second-obstical" + idTwoNew);
-    $(newObsticalTwoId).delay(1200).animate({marginLeft: '0px'}, {duration: 4500, easing: 'linear', step:locateObst, complete:  function(){removeObst(); keepingScoreTwo();}});
+    $(newObsticalTwoId).delay(1000).animate({marginLeft: '0px'}, {duration: 4500, easing: 'linear', step:locateObst, complete:  function(){removeObst(); keepingScoreTwo();}});
     //console.log(idTwoNew);
     idTwoNew +=1;
     function removeObst(){

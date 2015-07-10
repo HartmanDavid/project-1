@@ -2,7 +2,11 @@ body{
   background-color: lightyellow;
   font-family: 'Permanent Marker', cursive;
 }
-
+header{
+    font-size: 50px;
+    /*margin: 20px auto -30px auto;*/
+    text-align: center;
+}
 .container{
   /*position: absolute;*/
   height: 100%;
@@ -19,14 +23,28 @@ body{
   border-radius: 5px;
 }
 
+.score-board{
+    /*position: relative;*/
+    border: 5px solid black;
+    border-radius: 5px;
+    width: 94%;
+    margin: 5px auto;
+    /*display: inline-block;*/
+    font-size: 25px;
+}
+
+.inner-score{
+    display: inline-block;
+    padding: 0 2em;
+}
+
 .dog {
   margin-left: 3em;
-  height: 1em;
-  width: 1em;
-  background-color: lightgray;
-  border: 2px solid darkgray;
-  border-radius: 3px;
-  /*position: relative;*/
+  height: 2em;
+  width: 2em;
+  /*background-color: lightgray;*/
+  /*border: 2px solid darkgray;*/
+  /*border-radius: 3px;*/
 }
 
 .convayer_belt{
@@ -57,32 +75,19 @@ body{
   width: 1em;
   background-color: lightgreen;
   border: 1px solid lightblue;
-  border-radius: 3px;
+  border-radius: 100%;
   position: relative;
 }
 
 div[id^='first-obstical']{
-  top: 20%;
+  top: 15%;
   background-color: pink;
+  /*background: src()*/
 }
 
 div[id^='second-obstical']{
-  top: 50%;
+  top: 47%;
   background-color: yellow;
-}
-.score-board{
-    /*position: relative;*/
-    border: 1px solid black;
-    border-radius: 3px;
-    width: 95%;
-    margin: 2em auto;
-    /*display: inline-block;*/
-    font-size: 25px;
-}
-
-.inner-score{
-    display: inline-block;
-    padding: 0 2em;
 }
 
 /*#player-one{
