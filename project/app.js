@@ -20,9 +20,17 @@ var idTwoNew = 0;
 var dogTwoHits = 0; //counter for dog two-bottom hits the obstical- number NOT indicative of number of intersections
 var dogTwoAvoid = 0;
 
+var boardLevel= 1;
+
 myObsticalOne();
 myObsticalTwo();
 scoreBoard();
+// $("#first-dog img").each(function() {console.log('start');
+//     // let cl be (half parent width) - (half element width).
+//     cl = ($(this).parent().innerWidth() / 2) - ($(this).innerWidth() / 2);
+//     console.log(cl);// we can set the left position to that value to achieve center
+//     $(this).css({"left":cl});
+// });
 $('body').on("keydown", function(e){
     if (e.which == 76){ // 76 is the 'L' key - this makes dog one jump up
         $("#first-dog").animate({top: "15%"}, { duration: 200, easing: "linear", step: locateDogOne}).animate({top: "30%"},{ duration: 400, easing: "linear", step:locateDogOne});}
@@ -131,4 +139,5 @@ function keepingScoreTwo(){
 function scoreBoard(){
     $('#player-one span').text(playerDogOne[0]);
     $('#player-two span').text(playerDogTwo[0]);
+    $('#level span').text(boardLevel);
 }

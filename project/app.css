@@ -26,7 +26,7 @@ body{
   background-color: lightgray;
   border: 2px solid darkgray;
   border-radius: 3px;
-  position: relative;
+  /*position: relative;*/
 }
 
 .convayer_belt{
@@ -35,9 +35,12 @@ body{
 }
 #first-dog{
   top: 30%;
+  position:relative;
+  /*left: -20px;*/
 }
 #second-dog{
   top: 60%;
+  position: relative;
 }
 
 #first-obstical{
@@ -73,8 +76,13 @@ div[id^='second-obstical']{
     border-radius: 3px;
     width: 95%;
     margin: 2em auto;
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 25px;
+}
+
+.inner-score{
+    display: inline-block;
+    padding: 0 2em;
 }
 
 /*#player-one{
@@ -87,3 +95,9 @@ div[id^='second-obstical']{
 #level{
     float: right;
 }*/
+img {
+    /*border: 1px solid black;*/
+    position: inherit;
+    top: -55px;
+    left: -55px
+}
